@@ -1,0 +1,103 @@
+# ============================
+# 1️⃣  Setup (only once per computer)
+# ============================
+
+git config --global user.name "your-username"              # Set your Git username
+git config --global user.email "your-email@example.com"    # Set your Git email
+git config --list                                          # Check your Git config settings
+
+
+# ============================
+# 2️⃣  Create or Clone a Repository
+# ============================
+
+git init                                                   # Initialize a new local Git repo in current folder
+git clone https://github.com/username/repo.git              # Clone (download) an existing repo from GitHub
+
+
+# ============================
+# 3️⃣  Basic Workflow (Local Changes)
+# ============================
+
+git status                                                 # See which files are changed, staged, or untracked
+git add filename                                           # Add a single file to staging area
+git add .                                                  # Add all changed files to staging area
+git commit -m "Your commit message"                        # Save (commit) staged changes with a message
+git log                                                    # View commit history
+git diff                                                   # Show changes between commits or unstaged edits
+git restore filename                                       # Undo changes in a file (before staging)
+git rm filename                                            # Remove a file from Git tracking and filesystem
+
+
+# ============================
+# 4️⃣  Branching and Merging
+# ============================
+
+git branch                                                 # List all branches
+git branch branch-name                                     # Create a new branch
+git checkout branch-name                                   # Switch to another branch
+git checkout -b branch-name                                # Create and switch to a new branch
+git merge branch-name                                      # Merge another branch into current branch
+git branch -d branch-name                                  # Delete a branch
+
+
+# ============================
+# 5️⃣  Connect Local Repo to GitHub
+# ============================
+
+git remote add origin https://github.com/username/repo.git  # Link local repo to GitHub
+git remote -v                                              # Show linked GitHub repo
+git remote set-url origin https://github.com/username/new-repo.git   # Change GitHub repo connection
+
+
+# ============================
+# 6️⃣  Pushing & Pulling (Sync with GitHub)
+# ============================
+
+git push -u origin main                                    # Push your code to GitHub (first time)
+git push                                                   # Push new commits
+git pull                                                   # Pull (download) latest changes from GitHub
+git fetch                                                  # Fetch all branches and commits (does not merge)
+git pull origin main --rebase                              # Pull remote changes and reapply your commits
+
+
+# ============================
+# 7️⃣  Fixing Common Issues
+# ============================
+
+git rm --cached filename                                   # Unstage a file (keep it locally)
+git reset                                                  # Unstage all files
+git reset --hard                                           # Discard all local changes
+git stash                                                  # Temporarily save uncommitted changes
+git stash pop                                              # Reapply stashed changes
+git push origin main --force                               # Force push (use carefully)
+
+
+# ============================
+# 8️⃣  Working with Multiple Repos
+# ============================
+
+cd path/to/your/repo                                       # Move into another repo folder
+code .                                                     # Open that repo in VS Code
+git remote set-url origin https://github.com/username/new-repo.git    # Change current folder’s GitHub repo
+git remote -v                                              # Verify current GitHub repo connection
+
+
+# ============================
+# 9️⃣  Deleting Files or Folders
+# ============================
+
+git rm filename                                            # Delete file from local + Git tracking
+git rm -r foldername                                       # Delete folder from local + Git tracking
+git commit -m "Deleted file/folder"
+git push origin main                                       # Push deletion to GitHub
+
+
+# ============================
+# 🔟  Checking Repo Info
+# ============================
+
+git status                                                 # Check working directory status
+git remote -v                                              # Check remote GitHub URL
+git branch                                                 # See current branch
+git show                                                   # Show details of last commit
